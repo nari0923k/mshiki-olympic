@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M式オリンピック（v7）</title>
+  <style>
+    body { font-family: sans-serif; padding:10px; background:#f0fff0 }
+    h1 { text-align:center; color:#006400; font-size:20px; margin-bottom:6px }
+    #courseName { text-align:center; font-size:16px; width:100%; margin:0 auto 12px auto; padding:6px; box-sizing:border-box; }
+    .player-block { border:1px solid #ccc; padding:8px; margin-bottom:10px; background:#ffffff; }
+    .score-row { display:flex; flex-wrap:wrap; gap:4px; }
+    .score-item { width: 22%; min-width: 70px; margin-bottom: 4px; }
+    select { width:100%; font-size:12px; }
+    .summary { margin-top:8px; font-weight:bold; color:#333; font-size:14px; }
+    input.pname { width: 100%; font-size:14px; text-align:center; padding:2px; margin-bottom:4px; }
+    button { padding:8px 12px; margin:4px; border:none; background:#006400; color:#fff; font-size:1em; }
+  </style>
+</head>
+<body>
+  <h1>M式オリンピック（v7）</h1>
+  <input type="text" id="courseName" maxlength="30" placeholder="ゴルフ場名を入力してください">
+  <div id="app">
+<div class="player-block" data-player="0">
+  <input type="text" class="pname" maxlength="4" value="Player1" data-player="0">
+  <div class="score-row">
+    <div class="score-item"><select data-player="0" data-hole="0"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="0" data-hole="1"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="0" data-hole="2"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="0" data-hole="3"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="0" data-hole="4"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="0" data-hole="5"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="0" data-hole="6"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="0" data-hole="7"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="0" data-hole="8"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="0" data-hole="9"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="0" data-hole="10"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="0" data-hole="11"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="0" data-hole="12"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="0" data-hole="13"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="0" data-hole="14"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="0" data-hole="15"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="0" data-hole="16"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="0" data-hole="17"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+  </div>
+  <div class="summary">得点: <span class="pts" data-player="0">0</span>点　精算: <span class="pay" data-player="0">0</span>円</div>
+</div>
+<div class="player-block" data-player="1">
+  <input type="text" class="pname" maxlength="4" value="Player2" data-player="1">
+  <div class="score-row">
+    <div class="score-item"><select data-player="1" data-hole="0"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="1" data-hole="1"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="1" data-hole="2"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="1" data-hole="3"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="1" data-hole="4"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="1" data-hole="5"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="1" data-hole="6"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="1" data-hole="7"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="1" data-hole="8"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="1" data-hole="9"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="1" data-hole="10"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="1" data-hole="11"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="1" data-hole="12"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="1" data-hole="13"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="1" data-hole="14"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="1" data-hole="15"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="1" data-hole="16"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="1" data-hole="17"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+  </div>
+  <div class="summary">得点: <span class="pts" data-player="1">0</span>点　精算: <span class="pay" data-player="1">0</span>円</div>
+</div>
+<div class="player-block" data-player="2">
+  <input type="text" class="pname" maxlength="4" value="Player3" data-player="2">
+  <div class="score-row">
+    <div class="score-item"><select data-player="2" data-hole="0"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="2" data-hole="1"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="2" data-hole="2"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="2" data-hole="3"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="2" data-hole="4"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="2" data-hole="5"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="2" data-hole="6"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="2" data-hole="7"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="2" data-hole="8"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="2" data-hole="9"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="2" data-hole="10"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="2" data-hole="11"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="2" data-hole="12"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="2" data-hole="13"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="2" data-hole="14"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="2" data-hole="15"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="2" data-hole="16"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="2" data-hole="17"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+  </div>
+  <div class="summary">得点: <span class="pts" data-player="2">0</span>点　精算: <span class="pay" data-player="2">0</span>円</div>
+</div>
+<div class="player-block" data-player="3">
+  <input type="text" class="pname" maxlength="4" value="Player4" data-player="3">
+  <div class="score-row">
+    <div class="score-item"><select data-player="3" data-hole="0"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="3" data-hole="1"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="3" data-hole="2"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="3" data-hole="3"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="3" data-hole="4"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="3" data-hole="5"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="3" data-hole="6"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="3" data-hole="7"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="3" data-hole="8"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="3" data-hole="9"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="3" data-hole="10"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="3" data-hole="11"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="3" data-hole="12"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="3" data-hole="13"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="3" data-hole="14"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="3" data-hole="15"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="3" data-hole="16"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+    <div class="score-item"><select data-player="3" data-hole="17"><option value=""></option><option value="金">金</option><option value="銀">銀</option><option value="銅">銅</option><option value="鉄">鉄</option><option value="ダイヤモンド">ダイヤモンド</option><option value="金罰">金罰</option><option value="銀罰">銀罰</option><option value="銅罰">銅罰</option><option value="鉄罰">鉄罰</option><option value="ニアピン">ニアピン</option></select></div>
+  </div>
+  <div class="summary">得点: <span class="pts" data-player="3">0</span>点　精算: <span class="pay" data-player="3">0</span>円</div>
+</div>
+    <div>
+      <button id="calc">計算</button>
+      <button id="save">保存</button>
+      <button id="load">復元</button>
+    </div>
+  </div>
+  <script>
+    const scoreMap = {
+      "金":4,"銀":3,"銅":2,"鉄":1,"ダイヤモンド":5,
+      "金罰":-1,"銀罰":-2,"銅罰":-3,"鉄罰":-4,"ニアピン":3
+    };
+    const players = [0,1,2,3];
+    document.getElementById("calc").onclick = () => {
+      let totals = [];
+      players.forEach(i => {
+        let sum = 0;
+        let entries = [];
+        document.querySelectorAll(`select[data-player="${i}"]`).forEach(s => {
+          const v = s.value.trim();
+          if (v) entries.push(v);
+          if (scoreMap[v] !== undefined) sum += scoreMap[v];
+        });
+        ["金","銀","銅","鉄"].forEach(m => {
+          const cnt = entries.filter(x => x === m).length;
+          if (cnt >= 4) sum += scoreMap[m] * 4;
+        });
+        if (["金","銀","銅","鉄"].every(m => entries.includes(m))) sum += 20;
+        document.querySelector(`.pts[data-player="${i}"]`).textContent = sum;
+        totals.push(sum);
+      });
+      const payments = players.map(i => 0);
+      for (let i = 0; i < players.length; i++) {
+        for (let j = 0; j < players.length; j++) {
+          if (i !== j) {
+            const diff = (totals[i] - totals[j]) * 100;
+            payments[i] += diff;
+          }
+        }
+      }
+      players.forEach((i, idx) => {
+        document.querySelector(`.pay[data-player="${i}"]`).textContent = payments[idx];
+      });
+    };
+    document.getElementById("save").onclick = () => {
+      const data = {
+        course: document.getElementById("courseName").value,
+        names: Array.from(document.querySelectorAll(".pname")).map(i=>i.value),
+        scores: Array.from(document.querySelectorAll("select")).map(i=>i.value)
+      };
+      localStorage.setItem("msoDataV7", JSON.stringify(data));
+      alert("保存しました");
+    };
+    document.getElementById("load").onclick = () => {
+      const data = JSON.parse(localStorage.getItem("msoDataV7")||"{}");
+      if (!data.names || !data.scores) return;
+      document.getElementById("courseName").value = data.course || "";
+      document.querySelectorAll(".pname").forEach((el,idx)=>el.value = data.names[idx] || "");
+      document.querySelectorAll("select").forEach((el,idx)=> el.value = data.scores[idx] || "");
+      alert("復元しました");
+    };
+  </script>
+</body>
+</html>
